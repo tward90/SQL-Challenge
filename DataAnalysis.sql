@@ -2,8 +2,8 @@
 
 SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
 FROM employees e
-JOIN salaries s
-ON (e.emp_no = s.emp_no);
+	JOIN salaries s
+		ON (e.emp_no = s.emp_no);
 
 -- 2. List first name, last name, and hire date for employees who were hired in 1986.
 
@@ -56,3 +56,9 @@ FROM employees e
 WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development'
 
 -- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+
+SELECT last_name,
+COUNT(last_name) AS "Total Occurrences"
+FROM employees
+GROUP BY last_name
+ORDER BY "Total Occurrences" DESC;
