@@ -23,7 +23,7 @@ CREATE TABLE employees (
 
 CREATE TABLE salaries (
  	emp_no INTEGER PRIMARY KEY NOT NULL,
- 	salary INTEGER NOT NULL,
+ 	salary MONEY NOT NULL,
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
@@ -57,5 +57,4 @@ SELECT * from employees limit 20
 SELECT * from salaries limit 20
 SELECT * from titles
 */
-
-
+SELECT * from departments
